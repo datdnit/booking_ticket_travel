@@ -1,0 +1,160 @@
+#tour-detail {
+  h2 {
+    font-size: 24px;
+    color: #013879;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 18px;
+    color: #000080;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  .tour-detail__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .tour-detail__header-left {
+      h1 {
+        font-size: 30px;
+        line-height: 1.33333;
+        font-weight: 700;
+      }
+    }
+    .tour-detail__header-right {
+      span:first-child {
+        color: red;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      span:nth-child(2) {
+        color: red;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .btn-style {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .gallery {
+    padding: 30px 0;
+    .row {
+      height: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .img-tour {
+      height: 100%;
+      padding-bottom: 8px;
+    }
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Nền tối */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn ease-in 0.3s;
+  }
+  /* Ảnh phóng to bên trong overlay */
+  .overlay-image {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  /* Nút đóng (X) */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Nút điều hướng trái/phải */
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+  }
+
+  .prev {
+    left: 20px;
+  }
+
+  .next {
+    right: 20px;
+  }
+
+  /* Đảm bảo ảnh trong gallery có thể nhấp */
+  .img-tour img {
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+#tour-detail {
+  .box-buy-ticket {
+    margin: 0 auto;
+    width: 100%;
+    padding: 44px;
+    box-shadow: 10px 10px 36px rgba(0, 0, 0, 0.08);
+    .ticket-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .ticket-price-detail {
+        display: inline-block;
+        // align-items: center;
+        // justify-content: center;
+        span:first-child {
+          color: red;
+          font-size: 32px;
+          font-weight: 700;
+        }
+        span:nth-child(2) {
+          color: red;
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+    .ticket-botton {
+      padding-top: 8px;
+      .btn-style {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

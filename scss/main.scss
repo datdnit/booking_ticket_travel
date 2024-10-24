@@ -1,0 +1,18 @@
+// Web base
+@import "./base/reset";
+
+// Web config
+@import "./configs/config";
+@import "./configs/font";
+
+// Import components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/card";
+@import "./components/card/component-card-tour";
+
+// Import page layout
+@import "./pages/index/index";
+@import "./pages/index/component-top-tour";
+@import "./pages/contact/contact";
+@import "./pages/tour-detail/tour-detail";

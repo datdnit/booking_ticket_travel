@@ -1,0 +1,172 @@
+.header-contact {
+  margin-top: 52px;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+    font-size: 13px;
+    padding-right: 4px;
+    font-weight: 500;
+  }
+  i {
+    color: gray;
+  }
+}
+
+.content-contact {
+  padding-bottom: 118px;
+  dt {
+    position: relative;
+    padding-left: 19px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    font-weight: 700;
+    font-size: 20px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 0;
+      bottom: 3px;
+      width: 4px;
+      background: #ed1b35;
+      border-radius: 100px;
+    }
+  }
+  dd {
+    margin-bottom: 24px;
+    padding-left: 19px;
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    i {
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.contact-form {
+  padding-bottom: 100px;
+  img {
+    width: 100%;
+    height: 488px;
+  }
+  .box {
+    background: #fff;
+    max-width: 1232px;
+    margin: -10vw auto 0;
+    position: relative;
+    z-index: 2;
+    padding: 102px 0 0;
+    p {
+      margin-bottom: 48px;
+      text-align: center;
+      font-weight: 700;
+      color: #013879;
+      font-size: 2.5em;
+    }
+    .button-cf {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .form-block {
+    margin: auto;
+    max-width: 815px;
+    label {
+      padding-right: 0;
+      padding-left: 0;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    em {
+      color: red;
+    }
+    input {
+      border-radius: 0;
+      background: #f6f8fa;
+      font-weight: 500;
+      border: none;
+      font-size: 14px;
+      padding: 16px;
+      &::placeholder {
+        font-size: 14px;
+        color: #94b9df;
+      }
+      &:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+    .form-control {
+      width: 90%;
+      float: right;
+    }
+  }
+}
+
+/////////////////////////////////////// REPONSIVE ////////////////////////////////////////
+
+@media screen and (max-width: 576px) {
+  .header-contact {
+    display: none;
+  }
+  .content-contact {
+    padding: 38px 0 78px 0;
+  }
+  .contact-form {
+    .image-container {
+      height: 40vh;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .box {
+      width: 90%;
+      margin: -104px auto 0;
+      padding: 24px 0 0;
+    }
+  }
+  .form-block {
+    padding: 0 16px !important;
+    .row {
+      --bs-gutter-x: 0;
+    }
+    label {
+      margin: 0 !important;
+    }
+    input {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  label {
+    margin-bottom: 12px;
+  }
+  .form-block {
+    padding: 0 24px;
+    .row {
+      --bs-gutter-x: 0;
+    }
+  }
+  .box {
+    width: 90%;
+    margin: -104px auto 0;
+    padding: 24px 0 0 !important;
+  }
+  label {
+    font-size: 15px !important;
+  }
+}

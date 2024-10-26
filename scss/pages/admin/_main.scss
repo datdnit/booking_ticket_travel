@@ -1,0 +1,611 @@
+:root {
+    --main-bg-color: #414e66;
+    --sub-bg-color: #f2f7fb;
+    --top-height: 70px;
+    --main-transition: all 0.5s ease;
+    --color-hove-text: #4a87ce;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+li {
+    list-style-type: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.row-grid {
+    display: flex; /* Sử dụng Flexbox thay vì Grid */
+}
+// main admin
+.admin .row-grid {
+    grid-template-columns: 20% 80%;
+}
+
+
+// sidebar
+.admin-sidebar {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    position: fixed; /* Ghim sidebar ở bên trái */
+    top: 0; /* Ghim từ phía trên */
+    left: 0; /* Ghim từ bên trái */
+    width: 250px; /* Đặt chiều rộng cho sidebar */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung lớn hơn chiều cao */
+    z-index: 1000; /* Đảm bảo sidebar luôn ở trên cùng */
+}
+
+.admin-sidebar-top {
+    position: relative; /* Đảm bảo div cha có vị trí tương đối */
+    height: var(--top-height); /* Thiết lập chiều cao cho div */
+    overflow: hidden; /* Ẩn các phần bị tràn ra ngoài */
+}
+
+.admin-sidebar-top img {
+    position: absolute; /* Đặt vị trí của ảnh */
+    top: 50%; /* Đặt vị trí từ trên xuống 50% */
+    left: 50%; /* Đặt vị trí từ trái qua 50% */
+    width: 100%; /* Chiếm 100% chiều rộng của div */
+    height: 100%; /* Chiếm 100% chiều cao của div */
+    object-fit: cover; /* Đảm bảo ảnh chiếm toàn bộ khung mà không bị biến dạng */
+    transform: translate(-50%, -50%); /* Căn giữa ảnh theo cả chiều ngang và chiều dọc */
+}
+
+.admin-sidebar-content > ul > li > a {
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.admin-sidebar-content > ul > li > a i:last-child {
+    margin-left: auto;
+}
+
+.admin-sidebar-content ul li a i {
+    margin-right: 6px;
+}
+
+.admin-sidebar-content {
+    padding: 30px 0 0 0;
+    color: whitesmoke;
+    
+}
+
+.admin-sidebar-content  ul  li {
+    padding: 6px;
+    transition: var(--main-transition);
+}
+
+.admin-sidebar-content  ul li:hover {
+    background-color: black;
+}
+
+.sub-menu {
+    height: 0;
+    overflow: hidden ;
+    transition: var(--main-transition);
+}
+
+.flex-box {
+    display: flex;
+}
+// .sub-menu.active {
+//     height: 80px;
+// }
+
+.sub-menu li:hover a{
+    color: var(--color-hove-text);
+}
+// content
+
+.admin-content {
+    margin-left: 250px; /* Đảm bảo nội dung không bị che khuất bởi sidebar */
+    width: calc(100% - 250px); /* Đặt chiều rộng cho phần nội dung */
+    background-color: var(--sub-bg-color);
+}
+
+.admin-content-top {
+    display: flex;
+    justify-content: space-between;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+    p {
+        margin: 0;
+    }
+}
+
+.admin-content-top .flex-box {
+    height: 70px;
+    align-items: center;
+}
+
+.admin-content-top i {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.admin-content-top-right ul li:last-child p {
+    cursor: pointer;
+}
+
+.admin-content-top-right ul li:first-child i {
+    position: relative;
+}
+
+.admin-content-top-right ul li:first-child i::after {
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: #4a87ce;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    animation: notification;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.admin-content-top-right ul li:nth-child(2) i {
+    position: relative;
+}
+
+.admin-content-top-right ul li:nth-child(2) i::after {
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: brown;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    animation: notification;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes notification {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.admin-content-main-title h3 {
+    padding: 12px;
+    font-weight: 500;
+    position: relative;
+}
+
+.admin-content-main-title h3::before {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 4px;
+    width: 70px;
+    background-color: var(--main-bg-color);
+    bottom: 6px;
+    left: 12px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+// input text area
+/* Định dạng container tổng */
+.admin-content-main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho khung bao quanh các input */
+.admin-inputs-wrapper {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho khung bao quanh các textarea */
+.admin-textareas-wrapper {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng từng nhóm input */
+.admin-content-main-content-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.admin-content-main-content-input label {
+    font-weight: bold;
+    color: #333;
+    flex-shrink: 0;
+    width: 150px;
+}
+
+/* Định dạng các input */
+.admin-content-main-content-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.admin-content-main-content-input input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+/* Định dạng cho các nút button */
+.btn-primary {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 0;
+}
+
+.btn-primary:hover {
+    background-color: #357ab8;
+    box-shadow: 0 4px 8px rgba(53, 122, 184, 0.2);
+}
+
+/* Định dạng từng nhóm textarea */
+.admin-content-main-content-textarea {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Định dạng label cho textarea */
+.admin-content-main-content-textarea label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Định dạng textarea */
+.admin-content-main-content-textarea textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.admin-content-main-content-textarea textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+// thêm tour
+/* Định dạng cho khung chứa (giống với khung ở trên) */
+.price-container {
+    max-width: 1000px; /* Cùng độ rộng với khung ở trên */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Định dạng cho nhóm input */
+.price-inputs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.price-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Định dạng cho label */
+.price-input label,
+.price-textarea label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Định dạng cho input */
+.price-input input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.price-input input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+/* Định dạng cho textarea */
+.price-textarea {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-textarea textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.price-textarea textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+// địa điểm
+/* Định dạng cho khung bao quanh các input SEO */
+.admin-seo-wrapper {
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Định dạng từng nhóm input */
+.admin-content-main-content-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.admin-content-main-content-input label {
+    font-weight: bold;
+    color: #333;
+    flex-shrink: 0;
+    width: 150px;
+}
+
+/* Định dạng các input */
+.admin-content-main-content-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.admin-content-main-content-input input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+/* Định dạng cho nút Thêm Tour */
+.btn-add-tour {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.btn-add-tour:hover {
+    background-color: #357ab8;
+    box-shadow: 0 4px 8px rgba(53, 122, 184, 0.2);
+}
+
+// list tour table
+.tour-list-wrapper {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.tour-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.tour-list-table th, .tour-list-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.tour-list-table th {
+    background-color: #007bff;
+    color: white;
+}
+.action-link {
+    padding: 5px 10px;
+    margin: 0 3px;
+    text-decoration: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}
+.link-view {
+    background-color: #17a2b8;
+}
+.link-edit {
+    background-color: #28a745;
+}
+.link-delete {
+    background-color: #dc3545;
+}
+
+// danh sách vé (orderlist)
+.booking-management-wrapper {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.booking-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.booking-management-table th, .booking-management-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.booking-management-table th {
+    background-color: #007bff;
+    color: white;
+}
+.booking-management-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+.booking-management-table a:hover {
+    text-decoration: underline;
+}
+
+// chi tiết vé
+.tour-info-wrapper {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.tour-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.tour-info-table th, .tour-info-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.tour-info-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+// admin
+.admin-info-wrapper {
+    margin-bottom: 20px;
+}
+
+.admin-info-item {
+    margin-bottom: 10px;
+}
+
+.admin-info-item label {
+    font-weight: bold;
+}
+
+.admin-action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+// footer
+/* Định dạng cho phần footer */
+.footer {
+    background-color: #fff;
+    color: #ccc;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative; /* Sửa lại từ fixed thành relative */
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateY(10px);
+    p {
+        margin-left: 10px;
+    }
+}
+
+
+

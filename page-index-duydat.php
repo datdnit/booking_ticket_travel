@@ -17,6 +17,38 @@
         ?>
     <!-- End Include Header -->
     <main>
+        <section id="component-tour-search-slider">
+            <!-- Slider -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./assets/imgs/bao_tang.jpg" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/imgs/lau_dai.jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/imgs/bao_tang.jpg" class="d-block w-100" alt="Image 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thanh Tìm Kiếm -->
+            <div class="search-box">
+                <div class="input-group">
+                    <select class="custom-select" id="searchDropdown">
+                        <option selected>Tìm kiếm địa chỉ...</option>
+                        <option value="1">Địa chỉ 1</option>
+                        <option value="2">Địa chỉ 2</option>
+                        <option value="3">Địa chỉ 3</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="special-offer" class="component-top-tour">
             <div class="container">
                 <h2>Ưu đãi đặc biệt</h2>
@@ -51,9 +83,6 @@
                         </div>
                     <?php } ?>
                 </div>
-                <div class="new-event_button">
-                    <button type="button" class="btn btn-style">Xem Thêm</button>
-                </div>
             </div>
         </section>
     </main>
@@ -64,6 +93,8 @@
     <!-- Include Javascript -->
     <?php include "./component-javascripts.php" ?>
     <!-- End Include Javascript -->
+
+    
 </body>
 
 </html>

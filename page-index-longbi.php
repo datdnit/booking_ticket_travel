@@ -28,38 +28,37 @@
                     <div class="row">
                         <?php for ($i = 0; $i < 6; $i++): ?>
                             <div class="col-12 col-md-4">
-                                <div class="prominent-tour-card">
-                                    <div class="component-card-tour_img">
-                                        <div class="card-tour-img">
-                                            <img src="./assets/imgLbi/japan.jpg" class="card-img-top tour-card-img" alt="...">
+                                <a href="" class="prominent-tour-card_link">
+                                    <div class="prominent-tour-card">
+                                        <div class="component-card-tour_img">
+                                            <div class="card-tour-img">
+                                                <img src="./assets/imgLbi/japan.jpg" class="card-img-top tour-card-img" alt="...">
+                                            </div>
+                                            <div class="prominent-tour-card_standard">
+                                                <i class="bi bi-star"></i>
+                                                <span>Tiêu chuẩn</span>
+                                            </div>
                                         </div>
-                                        <div class="prominent-tour-card_standard">
-                                            <i class="bi bi-star"></i>
-                                            <span>Tiêu chuẩn</span>
+                                        <div class="card-body">
+                                            <span class="time-limit">thời lượng: 5N5Đ</span>
+                                            <h5 class="card-title">NHẬT BẢN MÙA LÁ VÀNG 5N5Đ | OSAKA – NARA – KYOTO – YAMANASHI – TOKYO – NARITA</h5>
+                                            <div class="prominent-tour-card_id">
+                                                <p class="prominent-tour-card_id-tittle"><i class="bi bi-ticket-perforated"></i> Phương Tiện: </p>
+                                                <p class="prominent-tour-card_id-txt">Ô tô, xe máy </p>
+                                            </div>
+                                            <div class="prominent-tour-card_start">
+                                                <p class="prominent-tour-card_start-tittle"><i class="bi bi-geo-alt"></i> Nơi Khởi Hành: </p>    
+                                                <p class="prominent-tour-card_start-txt"> TP Hà Nội</p>
+                                            </div>
+                                            <div class="prominent-tour-card_price">
+                                                <p>24.000.000 </p>
+                                                <p class="prominent-tour-card_price-VND">VNĐ</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <span class="time-limit">thời lượng: 5N5Đ</span>
-                                        <h5 class="card-title">NHẬT BẢN MÙA LÁ VÀNG 5N5Đ | OSAKA – NARA – KYOTO – YAMANASHI – TOKYO – NARITA</h5>
-                                        <div class="prominent-tour-card_id">
-                                            <p class="prominent-tour-card_id-tittle"><i class="bi bi-ticket-perforated"></i> Mã Tour: </p>
-                                            <p class="prominent-tour-card_id-txt"> JAPANWAVE</p>
-                                        </div>
-                                        <div class="prominent-tour-card_start">
-                                            <p class="prominent-tour-card_start-tittle"><i class="bi bi-geo-alt"></i> Nơi Khởi Hành: </p>    
-                                            <p class="prominent-tour-card_start-txt"> TP Hà Nội</p>
-                                        </div>
-                                        <div class="prominent-tour-card_price">
-                                            <p>24.000.000 </p>
-                                            <p class="prominent-tour-card_price-VND">VNĐ</p>
-                                        </div>
-                                        <a href="#" class="btn detail-btn">Chi Tiết</a>
-                                        
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         <?php endfor; ?>
-                        <button type="button" class="btn prominent-tour-button_show-more">Xem Thêm</button>
                     </div>
                 </div>
             </div>

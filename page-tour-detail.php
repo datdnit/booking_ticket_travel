@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                         <div class="overview">
                             <h2>Tổng Quan</h2>
                             <div class="endow">
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <div class="box-buy-ticket">
                             <h4>Thông tin cơ bản</h4>
                             <ul>
@@ -154,10 +154,53 @@
             </div>
         </section>
 
+        <!-- Form Modal -->
+        <div id="bookingFormModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn" onclick="toggleBookingForm()">×</span>
+                <h2>Thông tin đặt vé</h2>
+                <form>
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Số hành khách:</label>
+                    <input type="number" id="number" name="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit" class="btn btn-style">Gửi</button>
+                </form>
+            </div>
+        </div>
+
+        
     </main>
     <!-- Include Javascript -->
     <?php include "./component-javascripts.php" ?>
     <!-- End Include Javascript -->
+     <script>
+        // Hàm mở/đóng modal
+        function toggleBookingForm() {
+        const modal = document.getElementById('bookingFormModal');
+        modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Thêm sự kiện click vào tất cả các nút "Đặt Ngay"
+        document.querySelectorAll('.btn-style').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
+            toggleBookingForm();
+        });
+        });
+     </script>
 </body>
 
 </html>

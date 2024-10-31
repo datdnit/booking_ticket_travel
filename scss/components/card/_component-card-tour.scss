@@ -12,12 +12,7 @@
     color: #fff;
   }
 }
-.new-event_button {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 #special-offer,
 #new-event {
   padding: 215px 0 120px;
@@ -109,6 +104,90 @@
   }
 }
 
+// slider and search
+#component-tour-search-slider {
+  position: relative;
+
+  .carousel {
+    width: 100vw; // Chiếm toàn bộ chiều ngang trình duyệt
+    height: 400px; // Giới hạn chiều cao ban đầu của slider
+    overflow: hidden;
+
+    .carousel-inner {
+      .carousel-item {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .search-box {
+    position: absolute;
+    bottom: 20px; // Đặt thanh tìm kiếm ở phía dưới slider
+    left: 50%;
+    transform: translateX(-50%);
+    width: 66.67%; // Chiều rộng của thanh tìm kiếm bằng 2/3 slider
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9); // Nền trắng bán trong suốt
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .input-group {
+      display: flex;
+      width: 100%;
+
+      .custom-select,
+      .btn-primary {
+        flex: 1; // Chiếm toàn bộ chiều ngang có sẵn của .input-group
+      }
+
+      .custom-select {
+        border-top-right-radius: 0; // Bỏ bo góc phải của dropdown
+        border-bottom-right-radius: 0;
+      }
+
+      .btn-primary {
+        flex-shrink: 0; // Đảm bảo nút không co lại
+        width: 100px; // Chiều rộng cố định cho nút
+        border-top-left-radius: 0; // Bỏ bo góc trái của nút
+        border-bottom-left-radius: 0;
+        background-color: #000;
+      }
+    }
+  }
+}
+
+// Responsive settings
+@media (max-width: 768px) {
+  #component-tour-search-slider {
+    .carousel {
+      height: 300px; // Giảm chiều cao slider trên màn hình nhỏ
+    }
+
+    .search-box {
+      width: 80%; // Thanh tìm kiếm chiếm 80% chiều rộng slider
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #component-tour-search-slider {
+    .carousel {
+      height: 250px; // Giảm chiều cao slider trên màn hình rất nhỏ
+    }
+
+    .search-box {
+      width: 90%; // Thanh tìm kiếm chiếm 90% chiều rộng slider trên màn hình rất nhỏ
+    }
+  }
+}
+
+
+// responsive
 @media screen and (max-width: 1200px) {
   #special-offer,
   #new-event {

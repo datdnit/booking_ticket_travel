@@ -2,16 +2,19 @@
     padding-top: 80px;
     background-color: #fff;
     .component-card-list-prominent-tour {
+        .prominent-tour-card_link {
+            cursor: pointer;
+            &:hover .component-card-tour_img img {
+                transform: scale(1.2);
+            }
+        }
         .prominent-tour-card {
             width: 100%;
-            margin: 70px 0;
+            margin: 30px 0;
             .component-card-tour_img {
                 position: relative;
                 img {
                     transition: transform 0.3s ease;
-                    &:hover {
-                        transform: scale(1.2);
-                    }
                 }
                 .card-tour-img{
                     width: 100%;

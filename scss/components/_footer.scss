@@ -22,9 +22,7 @@
     }
 }
 
-a:hover {
-    opacity: 0.5;
-}
+
 
 .footer__item-list {
     list-style-type: none;
@@ -54,6 +52,9 @@ a:hover {
 }
 
 #footer {
+    a:hover {
+        opacity: 0.5;
+    }
     background-color: #013879;
     .footer__content {
         padding: 56px 16px 0;
